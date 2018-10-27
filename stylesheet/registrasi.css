@@ -1,0 +1,27 @@
+#body{
+  /* margin: auto; */
+  background: url("../img/back.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 570px;
+  padding-top: 50px;
+  /* padding-bottom: 200px; */
+}
+
+.error {
+	width: 80%;
+	margin: 0px auto;
+	padding: 10px;
+	border: 1px solid #a94442;
+	color: #a94442;
+	background: #f2dede;
+	border-radius: 1px;
+	text-align: left;
+  /* font-size: 10px; */
+}
+
+@media only screen and (max-width: 768px){
+  #body{
+    padding-top: 5px;
+    padding-bottom: 0;
+  }
+}

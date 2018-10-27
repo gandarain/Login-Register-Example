@@ -1,0 +1,22 @@
+#body{
+  background: url("../img/back.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding-top: 210px;
+  padding-bottom: 210px;
+}
+
+.error {
+	width: 60%;
+	margin: 0px auto;
+	padding: 10px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+
+  #bodykiri{
+    height: 100px;
+    padding: 25px;
+  }
