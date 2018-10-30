@@ -19,13 +19,22 @@
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
 		// form validation: ensure that the form is correctly filled
-		if (empty($username)) { array_push($errors, "Username is required"); }
-		if (empty($email)) { array_push($errors, "Email is required"); }
-		if (empty($password_1)) { array_push($errors, "Password is required"); }
+		if (empty(trim($username))) { array_push($errors, "Username is required"); }
+		if (empty(trim($email))) { array_push($errors, "Email is required"); }
+		if (empty(trim($password_1))) { array_push($errors, "Password is required"); }
+		if (empty(trim($password_2))) { array_push($errors, "Password is required"); }
 
 		if ($password_1 != $password_2) {
 			array_push($errors, "The two passwords do not match");
 		}
+
+		$query = "SELECT * FROM persons WHERE username='$username' AND email='$email'";
+		if($result = mysqli_query($db, $query)){
+			if(mysqli_num_rows($result) != 0){
+				array_push($errors, "User has been used");
+			}
+		}
+
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
